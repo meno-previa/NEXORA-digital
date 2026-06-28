@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora Digital | Renda Online do Zero</title>
+  <meta name="description" content="E-book prático para começar a gerar renda online do zero com passo a passo, plano de 7 dias e acesso imediato." />
+  <meta name="theme-color" content="#0b0f19" />
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --bg2:#10192b;
+      --card:rgba(14,20,33,.72);
+      --card2:rgba(18,26,44,.92);
+      --line:rgba(255,255,255,.10);
+      --text:#f4f7fb;
+      --muted:#aab6cf;
+      --gold:#f7b84b;
+      --gold2:#ffd88a;
+      --green:#36d399;
+      --red:#ff6b6b;
+      --shadow:0 25px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius2:18px;
+      --max:1140px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(247,184,75,.18), transparent 30%),
+        radial-gradient(circle at 20% 20%, rgba(90,120,255,.12), transparent 22%),
+        linear-gradient(180deg, #09101b 0%, #0b0f19 100%);
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04); border-radius:999px;
+      color:var(--gold2); font-size:.88rem; font-weight:600;
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar{
+      position:sticky; top:0; z-index:80;
+      backdrop-filter: blur(18px);
+      background: rgba(9,16,27,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar .wrap{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:800;
+      letter-spacing:.02em;
+    }
+    .brand-mark{
+      width:40px;height:40px;border-radius:12px;
+      background: linear-gradient(135deg, var(--gold), #ff8f5a);
+      display:grid; place-items:center; color:#1d1405; font-weight:900;
+      box-shadow: 0 12px 30px rgba(247,184,75,.25);
+      flex:0 0 auto;
+    }
+    .brand small{display:block; color:var(--muted); font-weight:500; font-size:.78rem}
+    .nav-cta{
+      padding:12px 18px; border-radius:999px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color:#251600; font-weight:900; box-shadow:0 12px 30px rgba(247,184,75,.25);
+      transition: transform .2s ease, filter .2s ease;
+      white-space:nowrap;
+    }
+    .nav-cta:hover{transform: translateY(-1px); filter:brightness(1.03)}
+
+    .hero{
+      padding: 56px 0 28px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:center;
+      min-height: calc(100vh - 90px);
+    }
+
+    .hero-copy h1{
+      font-size: clamp(2.5rem, 5.5vw, 5.9rem);
+      line-height: .92;
+      letter-spacing:-.04em;
+      margin:18px 0 18px;
+      max-width: 11ch;
+    }
+    .hero-copy h1 span{
+      color:var(--gold2);
+      display:block;
+    }
+    .hero-copy p{
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width: 58ch;
+      margin-bottom:22px;
+    }
+    .hero-badges{
+      display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 22px;
+    }
+
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin-top: 18px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:15px 22px; border-radius:999px; font-weight:900;
+      border:1px solid transparent; transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color:#251600; box-shadow:0 16px 36px rgba(247,184,75,.23);
+    }
+    .btn-secondary{
+      background: rgba(255,255,255,.05);
+      border-color: var(--line);
+      color: var(--text);
+    }
+    .btn:hover{transform: translateY(-2px)}
+    .trustline{
+      margin-top:14px; color:var(--muted); font-size:.92rem;
+    }
+
+    .hero-card{
+      position:relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:auto -40px -80px auto;
+      width:220px; height:220px; border-radius:50%;
+      background: radial-gradient(circle, rgba(247,184,75,.26), transparent 60%);
+      pointer-events:none;
+    }
+    .mockup{
+      height: 370px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.03)),
+        radial-gradient(circle at top left, rgba(247,184,75,.35), transparent 40%),
+        linear-gradient(145deg, #192235, #0d1220);
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      transform: perspective(1100px) rotateY(-9deg) rotateX(2deg);
+    }
+    .mockup .ebook{
+      font-size:.82rem;
+      letter-spacing:.22em;
+      color:var(--gold2);
+      font-weight:800;
+    }
+    .mockup h2{
+      font-size:2.1rem;
+      line-height:1;
+      max-width:7ch;
+      margin:8px 0;
+    }
+    .mockup p{color:rgba(255,255,255,.74); font-size:.96rem; max-width: 26ch;}
+    .mockup .price{
+      display:flex; align-items:flex-end; gap:8px; flex-wrap:wrap;
+      margin-top:8px;
+    }
+    .mockup .old{color:rgba(255,255,255,.55); text-decoration:line-through}
+    .mockup .new{font-size:2.4rem; font-weight:900; color:var(--gold2)}
+    .mockup .stamp{
+      position:absolute; right:18px; top:18px;
+      background: rgba(54,211,153,.14);
+      color: #9ff5cf;
+      border:1px solid rgba(54,211,153,.22);
+      padding:8px 12px; border-radius:999px; font-size:.8rem; font-weight:800;
+    }
+    .mockup .meta{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:10px;
+    }
+    .mini{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:16px;
+      padding:12px;
+    }
+    .mini b{display:block; margin-bottom:4px}
+    .mini span{font-size:.83rem; color:rgba(255,255,255,.68)}
+
+    .ticker{
+      margin: 22px 0 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .ticker .wrap{
+      display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between;
+      padding:14px 0;
+      color:var(--muted); font-size:.92rem;
+    }
+    .ticker strong{color:var(--text)}
+
+    section{padding: 76px 0}
+    .sec-head{
+      display:flex; justify-content:space-between; align-items:end;
+      gap:16px; margin-bottom:26px; flex-wrap:wrap;
+    }
+    .sec-head h2{
+      font-size:clamp(1.7rem, 3vw, 3.1rem);
+      letter-spacing:-.03em;
+      line-height:1.02;
+    }
+    .sec-head p{
+      max-width:60ch; color:var(--muted);
+    }
+
+    .grid-4{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .card h3{margin:12px 0 8px; font-size:1.02rem}
+    .card p{color:var(--muted); font-size:.95rem}
+    .icon{
+      width:46px; height:46px; border-radius:14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(247,184,75,.22), rgba(255,216,138,.10));
+      border:1px solid rgba(247,184,75,.20);
+      font-size:1.25rem;
+    }
+
+    .split{
+      display:grid; grid-template-columns: 1fr 1fr; gap:16px;
+    }
+    .list{
+      display:grid; gap:10px; margin-top:16px;
+    }
+    .item{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px 0; border-bottom:1px solid var(--line);
+    }
+    .item:last-child{border-bottom:none}
+    .bullet{
+      width:24px; height:24px; border-radius:50%;
+      background: rgba(54,211,153,.12);
+      border:1px solid rgba(54,211,153,.22);
+      color:#95f2cd;
+      display:grid; place-items:center; font-size:.82rem; font-weight:900;
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+    .item b{display:block; margin-bottom:4px}
+    .item span{color:var(--muted); font-size:.94rem}
+
+    .pricing{
+      display:grid; grid-template-columns: 1fr .95fr; gap:16px; align-items:stretch;
+    }
+    .pricebox{
+      background:
+        radial-gradient(circle at top left, rgba(247,184,75,.18), transparent 35%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid rgba(247,184,75,.22);
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: var(--shadow);
+    }
+    .ribbon{
+      display:inline-block;
+      background: rgba(255,107,107,.12);
+      border:1px solid rgba(255,107,107,.18);
+      color:#ffb2b2;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.82rem;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+    .bigprice{
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height:1;
+      font-weight: 1000;
+      color: var(--gold2);
+      margin: 10px 0 8px;
+    }
+    .oldprice{
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size:1rem;
+    }
+    .price-note{color:var(--muted); margin-top:8px}
+    .checklist{
+      margin:22px 0 0; display:grid; gap:12px;
+    }
+    .checkline{
+      display:flex; gap:10px; align-items:flex-start;
+      color:var(--text);
+    }
+    .tick{
+      width:22px; height:22px; border-radius:50%;
+      background: rgba(54,211,153,.12);
+      border:1px solid rgba(54,211,153,.22);
+      color:#95f2cd;
+      display:grid; place-items:center; font-size:.8rem; font-weight:900; flex:0 0 auto;
+      margin-top:2px;
+    }
+
+    .checkout{
+      background: var(--card2);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      padding: 28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow: var(--shadow);
+    }
+    .progress{
+      margin-top: 10px;
+      height: 12px;
+      background: rgba(255,255,255,.07);
+      border-radius: 999px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .bar{
+      width: 87%;
+      height:100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      border-radius:999px;
+    }
+    .countdown{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap:10px;
+      margin: 18px 0 0;
+    }
+    .time{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:18px;
+      padding:14px 10px;
+      text-align:center;
+    }
+    .time b{display:block; font-size:1.3rem}
+    .time span{font-size:.76rem; color:var(--muted)}
+    .paybtn{
+      margin-top: 18px;
+      width:100%;
+      padding:18px 20px;
+      border:none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color:#251600;
+      font-size:1rem;
+      font-weight:1000;
+      cursor:pointer;
+      box-shadow: 0 18px 36px rgba(247,184,75,.23);
+      animation: pulse 2.4s infinite;
+    }
+    @keyframes pulse{
+      0%,100%{transform:translateY(0); box-shadow: 0 18px 36px rgba(247,184,75,.20)}
+      50%{transform:translateY(-1px); box-shadow: 0 22px 46px rgba(247,184,75,.32)}
+    }
+
+    .faq{
+      display:grid; gap:12px;
+    }
+    details{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: 18px;
+      padding:18px 18px;
+      box-shadow: var(--shadow);
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{color:var(--muted); margin-top:10px}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding: 30px 0 90px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .stickybar{
+      position:fixed; left:0; right:0; bottom:0; z-index:90;
+      background: rgba(7,12,20,.90);
+      backdrop-filter: blur(18px);
+      border-top:1px solid var(--line);
+      display:none;
+    }
+    .stickybar .inner{
+      width:min(var(--max), calc(100% - 20px)); margin:0 auto;
+      padding:12px 0;
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .stickybar .price{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .stickybar .price strong{font-size:1.15rem; color:var(--gold2)}
+    .stickybar .price span{font-size:.8rem; color:var(--muted); text-decoration:line-through}
+    .stickybar a{flex:1; text-align:center}
+
+    .reveal{opacity:0; transform: translateY(18px); transition: all .6s ease}
+    .reveal.show{opacity:1; transform:none}
+
+    @media (max-width: 980px){
+      .hero-grid,.pricing,.split,.grid-4{grid-template-columns:1fr}
+      .hero{padding-top: 28px}
+      .hero-copy h1{max-width: none}
+      .mockup{transform:none}
+      .stickybar{display:block}
+      section{padding: 62px 0}
+    }
+    @media (max-width: 560px){
+      .topbar .wrap{padding:12px 0}
+      .brand small{display:none}
+      .hero-copy h1{font-size: clamp(2.3rem, 14vw, 4rem)}
+      .countdown{grid-template-columns: repeat(2, 1fr)}
+      .nav-cta{padding:11px 14px}
+      .hero-actions{flex-direction:column; align-items:stretch}
+      .btn{width:100%}
+      .foot{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <div>
+          Nexora Digital
+          <small>Edição 2025</small>
+        </div>
+      </div>
+      <a class="nav-cta" href="#comprar">Comprar agora</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <div class="pill">📘 E-book + Plano de 7 dias + Acesso imediato</div>
+          <h1>Renda Online <span>do Zero</span></h1>
+          <p>
+            Uma página pensada para vender com clareza: apresentação premium, oferta direta e estrutura ideal para publicar no GitHub Pages.
+          </p>
+
+          <div class="hero-badges">
+            <div class="pill">✅ Telefone + Internet</div>
+            <div class="pill">✅ Sem experiência</div>
+            <div class="pill">✅ Acesso vitalício</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#comprar">Quero o meu acesso</a>
+            <a class="btn btn-secondary" href="#conteudo">Ver conteúdo</a>
+          </div>
+          <div class="trustline">Oferta de lançamento por apenas <strong style="color:var(--gold2)">225 MT</strong> · preço anterior 450 MT</div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="mockup">
+            <div class="stamp">Atualizado 2025</div>
+            <div class="ebook">NEXORA DIGITAL</div>
+            <div>
+              <h2>Renda Online do Zero</h2>
+              <p>Guia prático para começar do básico e transformar o teu tempo livre em uma renda extra.</p>
+            </div>
+            <div>
+              <div class="price">
+                <div class="old">450 MT</div>
+                <div class="new">225 MT</div>
+              </div>
+              <div class="meta">
+                <div class="mini">
+                  <b>7 capítulos</b>
+                  <span>Direto ao ponto</span>
+                </div>
+                <div class="mini">
+                  <b>7 dias</b>
+                  <span>Plano de ação</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker">
+      <div class="wrap">
+        <div><strong>87%</strong> da oferta preenchida</div>
+        <div><strong>4.9/5</strong> avaliação média</div>
+        <div><strong>+3.800</strong> leitores</div>
+        <div><strong>Entrega imediata</strong> após compra</div>
+      </div>
+    </div>
+
+    <section id="conteudo">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <div class="pill">Por que esta página converte melhor</div>
+            <h2>Estrutura limpa, rápida e feita para vender</h2>
+          </div>
+          <p>Ideal para GitHub Pages: simples de publicar, bonita em mobile e com foco total em conversão.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card reveal">
+            <div class="icon">⚡</div>
+            <h3>Oferta direta</h3>
+            <p>Mostra o benefício logo no início, sem confusão nem excesso de texto.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">🎯</div>
+            <h3>Foco no preço</h3>
+            <p>Preço antigo e atual destacados de forma clara para reforçar valor.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">📱</div>
+            <h3>Mobile first</h3>
+            <p>A experiência no telemóvel fica leve, rápida e fácil de navegar.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">🛡️</div>
+            <h3>Mais confiança</h3>
+            <p>Badges, garantia e bloco de compra ajudam a reduzir dúvidas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div class="card reveal">
+          <div class="pill">O que a pessoa recebe</div>
+          <h2 style="margin-top:14px; font-size:clamp(1.5rem, 2.6vw, 2.4rem);">Tudo pronto para começar</h2>
+          <div class="list">
+            <div class="item">
+              <div class="bullet">✓</div>
+              <div><b>E-book em PDF</b><span>Conteúdo organizado com linguagem simples e aplicação prática.</span></div>
+            </div>
+            <div class="item">
+              <div class="bullet">✓</div>
+              <div><b>Plano de 7 dias</b><span>Passo a passo para iniciar sem enrolação.</span></div>
+            </div>
+            <div class="item">
+              <div class="bullet">✓</div>
+              <div><b>Kit de ferramentas</b><span>Ferramentas úteis para criar, vender e organizar o projeto.</span></div>
+            </div>
+            <div class="item">
+              <div class="bullet">✓</div>
+              <div><b>Acesso vitalício</b><span>Compra única com acesso permanente ao material.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="pill">Para quem é</div>
+          <h2 style="margin-top:14px; font-size:clamp(1.5rem, 2.6vw, 2.4rem);">Feito para quem quer sair do zero</h2>
+          <div class="list">
+            <div class="item">
+              <div class="bullet">1</div>
+              <div><b>Iniciante</b><span>Não precisa ter experiência anterior no digital.</span></div>
+            </div>
+            <div class="item">
+              <div class="bullet">2</div>
+              <div><b>Estudante</b><span>Ótimo para criar renda extra no tempo livre.</span></div>
+            </div>
+            <div class="item">
+              <div class="bullet">3</div>
+              <div><b>Trabalhador</b><span>Complementa a renda sem exigir grandes recursos.</span></div>
+            </div>
+            <div class="item">
+              <div class="bullet">4</div>
+              <div><b>Empreendedor</b><span>Serve como base para validar uma oferta simples.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comprar">
+      <div class="wrap pricing">
+        <div class="pricebox reveal">
+          <div class="ribbon">OFERTA DE LANÇAMENTO</div>
+          <h2 style="font-size:clamp(1.7rem, 3vw, 3rem); line-height:1.02;">Acesso completo por apenas</h2>
+          <div class="oldprice" style="margin-top:12px;">450 MT</div>
+          <div class="bigprice">225 MT</div>
+          <div class="price-note">Pagamento único · download imediato · acesso vitalício</div>
+
+          <div class="checklist">
+            <div class="checkline"><div class="tick">✓</div><div>E-book completo em PDF</div></div>
+            <div class="checkline"><div class="tick">✓</div><div>Plano prático de 7 dias</div></div>
+            <div class="checkline"><div class="tick">✓</div><div>Atualização de conteúdo</div></div>
+            <div class="checkline"><div class="tick">✓</div><div>Garantia de 7 dias</div></div>
+          </div>
+        </div>
+
+        <div class="checkout reveal">
+          <div>
+            <div class="pill">Oferta quase a terminar</div>
+            <div class="progress" aria-label="Barra de progresso"><div class="bar"></div></div>
+
+            <div class="countdown" id="countdown">
+              <div class="time"><b id="d">00</b><span>Dias</span></div>
+              <div class="time"><b id="h">00</b><span>Horas</span></div>
+              <div class="time"><b id="m">00</b><span>Min</span></div>
+              <div class="time"><b id="s">00</b><span>Seg</span></div>
+            </div>
+          </div>
+
+          <div>
+            <button class="paybtn" type="button">QUERO COMPRAR AGORA</button>
+            <p style="margin-top:12px; color:var(--muted); font-size:.92rem; text-align:center;">
+              Seguro para GitHub Pages · trocar o link do botão depois para o checkout real
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <div class="pill">Perguntas frequentes</div>
+            <h2>Dúvidas comuns</h2>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details class="reveal">
+            <summary>Como entrego o produto depois da compra?</summary>
+            <p>Podes ligar o botão de compra a um checkout externo e depois enviar o PDF automaticamente por e-mail ou página de agradecimento.</p>
+          </details>
+          <details class="reveal">
+            <summary>Posso usar isto no GitHub Pages?</summary>
+            <p>Sim. Esta estrutura é um único HTML, leve e fácil de publicar em repositório GitHub Pages.</p>
+          </details>
+          <details class="reveal">
+            <summary>O preço já está em 225 MT?</summary>
+            <p>Sim. A página nova já foi preparada com o preço de 225 MT e preço anterior de 450 MT.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong style="color:var(--text)">Nexora Digital</strong><br>
+        <span>© 2025 · Todos os direitos reservados</span>
+      </div>
+      <div>Pronto para subir no GitHub Pages</div>
+    </div>
+  </footer>
+
+  <div class="stickybar">
+    <div class="inner">
+      <div class="price">
+        <span>450 MT</span>
+        <strong>225 MT</strong>
+      </div>
+      <a class="btn btn-primary" href="#comprar">Comprar agora</a>
+    </div>
+  </div>
+
+  <script>
+    const target = new Date();
+    target.setDate(target.getDate() + 2);
+    target.setHours(23, 59, 59, 999);
+
+    function tick(){
+      const now = new Date().getTime();
+      const diff = Math.max(0, target.getTime() - now);
+
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      const m = Math.floor((diff / (1000*60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("d").textContent = String(d).padStart(2,'0');
+      document.getElementById("h").textContent = String(h).padStart(2,'0');
+      document.getElementById("m").textContent = String(m).padStart(2,'0');
+      document.getElementById("s").textContent = String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
